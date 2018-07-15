@@ -136,8 +136,8 @@ public class RegisterHandler extends MethodHandler
     //////////////////////////////////////////////////////////
     
     public void errResponseReceived(SipResponse sipResponse) {
-        String password = userAgent.getConfig().getPassword();
-        if (password != null &&  !"".equals(password.trim())) {
+//        String password = userAgent.getConfig().getPassword();
+//        if (password != null &&  !"".equals(password.trim())) {
             int statusCode = sipResponse.getStatusCode();
             if (statusCode == RFC3261.CODE_401_UNAUTHORIZED
                     || statusCode ==
@@ -197,9 +197,9 @@ public class RegisterHandler extends MethodHandler
                     notifyListener(sipResponse);
                 }
             }
-        } else { // no password configured 
-            notifyListener(sipResponse);
-        }
+//        } else { // no password configured
+//            notifyListener(sipResponse);
+//        }
     }
 
     private void notifyListener(SipResponse sipResponse) {

@@ -244,13 +244,13 @@ public class EventManager implements SipListener, MainFrameListener,
             @Override
             public void run() {
                 Config config = userAgent.getConfig();
-                if (config.getPassword() != null) {
+//                if (config.getPassword() != null) {
                     try {
                         userAgent.register();
                     } catch (SipUriSyntaxException e) {
                         mainFrame.setLabelText(e.getMessage());
                     }
-                }
+//                }
             }
         });
 
